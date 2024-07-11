@@ -1,17 +1,21 @@
+import { Outlet } from 'react-router-dom';
+import React from 'react';
+import NavItems from './components/navitems.jsx';
+import Banner from './Home/Banner'
+import Home from './Home/Home'
+import Footer from './Home/Footer'
+ // Adjust the import path if necessary
 
-import { Outlet } from 'react-router-dom'
-import NavItems from './components/NavItems' // Import the NavItems component from its source file
-import './App.css'
+function App () {
+    return (
+        <div>
+            <NavItems />
+            <div className="min-vh-100">
+                <Outlet />
+            </div>
+            <Footer />
+        </div>
+    );
+}
 
-function App() {
- 
-
-  return (
-      <>
-        <NavItems />
-        <Outlet />
-      </>
-    )
-  }
-
-export default App
+export default App;

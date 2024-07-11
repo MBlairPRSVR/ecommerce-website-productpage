@@ -1,5 +1,38 @@
-/*all styling was removed from this file for better consistency and readability*/
-/*npm i bootstrap@5.3.3 is required for compatibility with other versions of this package and to avoid any potential issues with the project  dependencies.
-//npm i react-router-dom is required for the routing of the project.
-//npm i react-icons is required for the icons used in the project.
-//npm i react-bootstrap is required for the bootstrap components used in the project.
+
+
+.nav-profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: indigo;
+    cursor: pointer;
+}
+
+
+.page-item{
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,.06);
+    background: #fff;
+    color: #101115;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 7px;
+}
+
+.github{
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    transition: all .3s ease;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #0F9D58;
+    color: #fff;
+}
+
