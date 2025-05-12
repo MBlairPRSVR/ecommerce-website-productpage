@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './PageHeader.css';  // Import the CSS file for the page header
 
-const PageHeader = ({title, curPage}) => {
+
+const PageHeader = ({ title, curPage }) => {
   return (
     <div className='pageheader-section'>
         <div className="container">
@@ -13,7 +15,10 @@ const PageHeader = ({title, curPage}) => {
                  <nav aria-label='breadcrumb'>
                     <ol className='breadcrumb justify-content-center'>
                         <li className='breadcrumb-item'><Link to="/">Home</Link></li>
-                        <li className='breadcrumb-item active' aria-current='page'>Shop{curPage}</li>
+                        {/* If curPage exists, append it to the breadcrumb, otherwise display nothing */}
+                        {curPage && (
+                            <li className='breadcrumb-item active' aria-current='page'>{curPage}</li>
+                        )}
                     </ol>
                  </nav>
                </div>
@@ -24,4 +29,4 @@ const PageHeader = ({title, curPage}) => {
   )
 }
 
-export default PageHeader
+export default PageHeader;

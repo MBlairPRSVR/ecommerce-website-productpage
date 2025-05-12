@@ -1,0 +1,43 @@
+.pageheader-section {
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 50px 0; /* Padding for spacing */
+  text-align: center;
+}
+
+.pageheader-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333; /* Dark gray for the title */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.pageheader-section .breadcrumb {
+  background: none; /* Remove background from breadcrumb */
+  padding: 0; /* Remove padding */
+  list-style: none;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.pageheader-section .breadcrumb .breadcrumb-item {
+  display: inline;
+  margin-right: 10px;
+}
+
+.pageheader-section .breadcrumb .breadcrumb-item a {
+  text-decoration: none;
+  color: #007bff; /* Blue color for links */
+}
+
+.pageheader-section .breadcrumb .breadcrumb-item.active {
+  color: #6c757d; /* Gray for the active item */
+}
+
+.pageheader-section .breadcrumb .breadcrumb-item::after {
+  content: '/';
+  margin-left: 10px;
+}
+
+.pageheader-section .breadcrumb .breadcrumb-item:last-child::after {
+  content: ''; /* Remove the last slash */
+}

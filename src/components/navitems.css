@@ -1,0 +1,104 @@
+/* navitems.css */
+
+/* Header Section */
+.header-section {
+    background-color: #fff;
+    padding: 20px 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Fixed Header */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Fade-In Animation */
+.fadeInUp {
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Top */
+.header-top {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+}
+
+.header-top a {
+    color: #333;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+/* Logo */
+.logo img {
+    width: 150px;
+}
+
+/* Menu */
+.menu-area .menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.menu-area .menu li {
+    margin: 0 15px;
+}
+
+.menu-area .menu li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-area .menu li a:hover {
+    color: #007bff;
+}
+
+/* Toggler for Mobile */
+.header-bar {
+    display: none;
+    cursor: pointer;
+}
+
+.header-bar span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+}
+
+.header-bar.active {
+    background-color: #007bff;
+}
+
+.d-lg-none {
+    display: block;
+}
+
+/* Social Toggler */
+.ellepsis-bar {
+    cursor: pointer;
+}
+
+.ellepsis-bar i {
+    font-size: 24px;
+    color: #333;
+}

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'; // Import PropTypes module
 import logo from "../assets/images/logo/logo.png";
+import './navitems.css';  // Import the CSS file
+
 
 // ErrorBoundary Component
 class ErrorBoundary extends React.Component {
@@ -24,7 +26,7 @@ class ErrorBoundary extends React.Component {
             return <h1>Something went wrong. Please try again later.</h1>;
         }
 
-        return this.props.children; 
+        return this.props.children;
     }
 }
 
@@ -37,14 +39,23 @@ const NavItems = () => {
     const [socialToggle, setSocialToggle] = useState(false);
     const [headerFixed, setHeaderFixed] = useState(false);
 
-    // Add scroll event listener
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
-            setHeaderFixed(true);
-        } else {
-            setHeaderFixed(false);
-        }
-    });
+    // Handle the scroll event and fix header
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 200) {
+                setHeaderFixed(true);
+            } else {
+                setHeaderFixed(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Cleanup the event listener on unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <ErrorBoundary> {/* Wrap NavItems with ErrorBoundary */}
@@ -99,15 +110,19 @@ const NavItems = () => {
                                 <Link to="/login" className='d-none d-md-'><span>Login</span></Link>
 
                                 {/* menu toggler */}
-                                <div onClick={() => setMenuToggle(!menuToggle)} className={'header-bar d-lg-none ${menuToggle ? "active" : ""}'}>
+                                <div 
+                                    onClick={() => setMenuToggle(!menuToggle)} 
+                                    className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}
+                                >
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                 </div>
 
                                 {/* social toggler */}
-                                <div className="ellepsis-bar d-md-none"
-                                onClick={() => setSocialToggle(!socialToggle)}
+                                <div 
+                                    className="ellepsis-bar d-md-none"
+                                    onClick={() => setSocialToggle(!socialToggle)}
                                 >
                                     <i className="icofont-info-square"></i>
                                 </div>

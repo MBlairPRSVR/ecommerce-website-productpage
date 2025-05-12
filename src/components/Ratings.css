@@ -1,0 +1,8 @@
+/* Assuming the default (empty) star is gray and filled is yellow */
+.rating .icofont-ui-rating {
+  color: gray;
+}
+
+.rating .icofont-ui-rating.filled {
+  color: gold;
+}

@@ -22,7 +22,7 @@ const Sponsor = () => {
             <Swiper
               slidesPerView={2}
               spaceBetween={20}
-              onAutoplay={{ delay: 2000, disableOnInteraction: false }}
+              autoplay={{ delay: 2000, disableOnInteraction: false }}
               breakpoints={{
                 640: { slidesPerView: 1, spaceBetween: 20 },
                 768: { slidesPerView: 3, spaceBetween: 40 },
